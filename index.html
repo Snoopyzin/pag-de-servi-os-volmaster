@@ -2,593 +2,455 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="theme-color" content="#FDB915">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>VOLMASTER TECH - Centro de Treinamento Automotivo</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volmaster Day - Evento de Tecnologia</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header/Navigation -->
-    <header class="header-main">
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fas fa-bars"></i>
-                    <span>MENU</span>
-                </button>
-                
-                <a class="navbar-brand mx-auto" href="#">
-                    <img src="imagens/logo volmaster branco.jpg" alt="VOLMASTER TECH" class="logo">
-                </a>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <img src="images/logo volmaster branco.jpg" alt="Volmaster Tech" class="logo-img">
             </div>
-        </nav>
-    </header>
-
-    <!-- Sidebar Menu -->
-    <div class="sidebar-menu" id="sidebarMenu">
-        <div class="sidebar-close" id="sidebarClose">
-            <i class="fas fa-times"></i>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#palestrantes">Palestrantes</a></li>
+                <li><a href="#programacao">Programação</a></li>
+                <li><a href="#videos">Vídeos</a></li>
+                <li><a href="#patrocinadores">Patrocinadores</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="btn-primary">Buy Ticket</button>
+            </div>
         </div>
-        <ul class="menu-list">
-            <li><a href="#home">Início</a></li>
-            <li><a href="#cursos">Treinamentos</a></li>
-            <li><a href="#instrutor">Instrutor</a></li>
-            <li><a href="#estrutura">Estrutura</a></li>
-            <li><a href="#online">On-line</a></li>
-            <li><a href="#faq">Dúvidas Frequentes</a></li>
-            <li><a href="#localizacao">Onde Estamos</a></li>
-            <li><a href="#contato">Fale Conosco</a></li>
-        </ul>
-    </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section" id="home">
+    <section class="hero" id="home">
         <div class="hero-overlay"></div>
-        
-        <!-- Social Links Vertical (Left) -->
-        <div class="social-links">
-            <a href="https://www.facebook.com/volmastertech" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/volmastertech/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@volmastertechtreinamentote8457" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
-        </div>
-        
-        <div class="hero-content">
-            <!-- Main Title -->
-            <h1 class="hero-title">VOLMASTER TECH</h1>
-            
-            <!-- Subtitle -->
-            <h2 class="hero-subtitle">ESPECIALISTAS EM VOLVO E SCANIA</h2>
-            
-            <!-- CTA Button -->
-            <a href="https://snoopyzin.github.io/volmaster-tech/" target="_blank" class="btn-discover">CURSOS PRESENCIAIS</a>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="hero-date">12 SETEMBRO, 2026 | GOIÂNIA, GO</p>
+                <h1 class="hero-title">
+                    Volmaster <span class="highlight">Day</span><br>
+                    (mudar depois)
+                </h1>
+                <button class="btn-hero">Ver Programação</button>
+            </div>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-value" id="days">00</span>
+                    <span class="countdown-label">Dias</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="hours">00</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="minutes">00</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="seconds">00</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Instructor Section -->
-    <section class="instructor-section py-5" id="instrutor">
+    <!-- Video Destaque Section -->
+    <section class="video-highlight" id="video-destaque">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 order-md-2">
-                    <div class="instructor-badge mb-3">● INSTRUTOR CHEFE</div>
-                    <h2 class="instructor-title mb-4">Quem é <span style="color: var(--primary-yellow);">Alan Diego</span>?</h2>
-                    
-                    <p class="instructor-text mb-3">
-                        Conheça <strong>Alan Diego</strong>, nosso instrutor chefe, um especialista na linha Volvo. Ele é extremamente reconhecido por sua excelente didática, sempre trazendo as novidades do mercado em um treinamento 100% prático e focado com a "mão na massa".
-                    </p>
-                    
-                    <p class="instructor-text mb-4">
-                        Seu método de ensino tem sido fundamental para o sucesso de milhares de profissionais nas áreas de mecânica, elétrica e programação.
-                    </p>
-                    
-                    <div class="instructor-quote mb-4">
-                        <p>Abaixo, confira alguns depoimentos de quem já foi aluno.</p>
+            <div class="section-header">
+                <span class="section-badge"><i class="fas fa-video"></i> Vídeo em Destaque</span>
+                <h2 class="section-title">ASSISTA O MELHOR DO EVENTO</h2>
+                <div class="title-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon">§</span>
+                    <span class="divider-line"></span>
+                </div>
+            </div>
+            <div class="video-highlight-container">
+                <div class="video-wrapper">
+                    <!-- Cole aqui o código embed do YouTube ou caminho do vídeo -->
+                    <iframe 
+                        src="https://www.youtube.com/embed/VIDEO_ID_AQUI" 
+                        title="Vídeo Destaque" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                    <!-- Ou use uma tag video para vídeos locais:
+                    <video controls>
+                        <source src="videos/destaque.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                    </video>
+                    -->
+                </div>
+                <div class="video-description">
+                    <h3>Título do Vídeo</h3>
+                    <p>Descrição do vídeo em destaque. Adicione aqui informações sobre o conteúdo, palestrante ou momento especial do evento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section class="speakers" id="speaker">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge"><i class="fas fa-users"></i> Conheça os Palestrantes</span>
+                <h2 class="section-title">PALESTRANTES EM DESTAQUE</h2>
+                <div class="title-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon">§</span>
+                    <span class="divider-line"></span>
+                </div>
+            </div>
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="images/evento 1.jpeg" alt="Alan Campos">
+                        <div class="speaker-overlay">
+                            <div class="speaker-socials">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <a href="https://api.whatsapp.com/send?phone=556293290519&text=Quero%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20cursos" target="_blank" class="btn-instructor-cta">
-                        QUERO SER UM ALUNO DA VOLMASTER TECH
-                        <i class="fas fa-check"></i>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Alan Campos</h3>
+                        <p class="speaker-role">Instrutor Chefe</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="images/evento 3 Kezia.jpeg" alt="Kezia Campos">
+                        <div class="speaker-overlay">
+                            <div class="speaker-socials">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Kezia Campos</h3>
+                        <p class="speaker-role">(a definir)</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="images/palestrante lais.jpeg" alt="Dr. Lais Torres">
+                        <div class="speaker-overlay">
+                            <div class="speaker-socials">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dra. Lais Torres</h3>
+                        <p class="speaker-role">advogada especializada em oficinas de caminhão</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="images/palestrante bruno.jpeg" alt="Dr. Bruno">
+                        <div class="speaker-overlay">
+                            <div class="speaker-socials">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">Dr. Bruno</h3>
+                        <p class="speaker-role">direito tributário</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://via.placeholder.com/400x500/1e1e35/FFD700?text=Unknown" alt="Speaker 5">
+                        <div class="speaker-overlay">
+                            <div class="speaker-socials">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">a definir</h3>
+                        <p class="speaker-role">(mudar depois)</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://via.placeholder.com/400x500/1e1e35/FFD700?text=Unknown" alt="Speaker 6">
+                        <div class="speaker-overlay">
+                            <div class="speaker-socials">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">a definir</h3>
+                        <p class="speaker-role">(mudar depois)</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://via.placeholder.com/400x500/1e1e35/FFD700?text=Unknown" alt="Speaker 7">
+                        <div class="speaker-overlay">
+                            <div class="speaker-socials">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">a definir</h3>
+                        <p class="speaker-role">(mudar depois)</p>
+                    </div>
+                </div>
+                <div class="speaker-card">
+                    <div class="speaker-image">
+                        <img src="https://via.placeholder.com/400x500/1e1e35/FFD700?text=Unknown" alt="Speaker 8">
+                        <div class="speaker-overlay">
+                            <div class="speaker-socials">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speaker-info">
+                        <h3 class="speaker-name">a definir</h3>
+                        <p class="speaker-role">(mudar depois)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule" id="schedule">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge"><i class="fas fa-calendar"></i> Seu Guia do Evento</span>
+                <h2 class="section-title">PROGRAMAÇÃO</h2>
+                <div class="title-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon">§</span>
+                    <span class="divider-line"></span>
+                </div>
+            </div>
+            <div class="schedule-date">12 Setembro 2026</div>
+            <div class="schedule-content" id="scheduleContent">
+                <div class="schedule-item">
+                    <div class="schedule-time">09:00 - 10:00</div>
+                    <div class="schedule-details">
+                        <h4>(Aguardar instruções)</h4>
+                        <p>Conteúdo a ser definido</p>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">10:00 - 11:30</div>
+                    <div class="schedule-details">
+                        <h4>(Aguardar instruções)</h4>
+                        <p>Conteúdo a ser definido</p>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">11:30 - 13:00</div>
+                    <div class="schedule-details">
+                        <h4>(Aguardar instruções)</h4>
+                        <p>Conteúdo a ser definido</p>
+                    </div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-time">13:00 - 14:00</div>
+                    <div class="schedule-details">
+                        <h4>(Aguardar instruções)</h4>
+                        <p>Conteúdo a ser definido</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery Section -->
+    <section class="video-gallery" id="videos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge"><i class="fas fa-film"></i> Galeria de Vídeos</span>
+                <h2 class="section-title">MOMENTOS DO EVENTO</h2>
+                <div class="title-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon">§</span>
+                    <span class="divider-line"></span>
+                </div>
+            </div>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe 
+                            src="https://www.youtube.com/embed/VIDEO_ID_1" 
+                            title="Vídeo 1" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>Título do Vídeo 1</h4>
+                        <p>Breve descrição do vídeo</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe 
+                            src="https://www.youtube.com/embed/VIDEO_ID_2" 
+                            title="Vídeo 2" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>Título do Vídeo 2</h4>
+                        <p>Breve descrição do vídeo</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe 
+                            src="https://www.youtube.com/embed/VIDEO_ID_3" 
+                            title="Vídeo 3" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>Título do Vídeo 3</h4>
+                        <p>Breve descrição do vídeo</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe 
+                            src="https://www.youtube.com/embed/VIDEO_ID_4" 
+                            title="Vídeo 4" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>Título do Vídeo 4</h4>
+                        <p>Breve descrição do vídeo</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe 
+                            src="https://www.youtube.com/embed/VIDEO_ID_5" 
+                            title="Vídeo 5" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>Título do Vídeo 5</h4>
+                        <p>Breve descrição do vídeo</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <iframe 
+                            src="https://www.youtube.com/embed/VIDEO_ID_6" 
+                            title="Vídeo 6" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h4>Título do Vídeo 6</h4>
+                        <p>Breve descrição do vídeo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="sponsors" id="sponsors">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge"><i class="fas fa-handshake"></i> Nossos Parceiros</span>
+                <h2 class="section-title">PATROCINADORES</h2>
+                <div class="title-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-icon">§</span>
+                    <span class="divider-line"></span>
+                </div>
+            </div>
+            <div class="sponsors-grid">
+                <div class="sponsor-card">
+                    <a href="https://www.dimsport.it/" target="_blank" rel="noopener noreferrer" class="sponsor-logo">
+                        <img src="images/DIMSPORT EVENTO.png" alt="DIMSPORT - Engine Calibration Specialists">
                     </a>
                 </div>
-                <div class="col-md-6 order-md-1">
-                    <div class="instructor-image-wrapper">
-                        <img src="imagens/instrutor.jpg" alt="Alan Diego - Instrutor Volmaster Tech" class="instructor-img">
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="https://via.placeholder.com/200x100/1e1e35/FFD700?text=Logo" alt="Patrocinador 2">
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="products-section py-5" id="cursos">
-        <div class="container-fluid">
-            <h2 class="section-title text-center">NOSSOS SERVIÇOS</h2>
-            
-            <div class="row g-0 mt-5">
-                <div class="col-md-3">
-                    <div class="product-card">
-                        <div class="product-image race-bg"></div>
-                        <div class="product-content">
-                            <h3 class="product-title">VOLVO</h3>
-                            <div class="product-line"></div>
-                            <p class="product-description">TREINAMENTO COMPLETO EM CAMINHÕES VOLVO - DIAGNÓSTICO E REPARO</p>
-                        </div>
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="https://via.placeholder.com/200x100/1e1e35/FFD700?text=Logo" alt="Patrocinador 3">
                     </div>
                 </div>
-                
-                <div class="col-md-3">
-                    <div class="product-card">
-                        <div class="product-image rapid-bg"></div>
-                        <div class="product-content">
-                            <h3 class="product-title">SCANIA</h3>
-                            <div class="product-line"></div>
-                            <p class="product-description">ESPECIALIZAÇÃO EM SISTEMAS SCANIA - ELETRÔNICA E MANUAIS</p>
-                        </div>
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="https://via.placeholder.com/200x100/1e1e35/FFD700?text=Logo" alt="Patrocinador 4">
                     </div>
                 </div>
-                
-                <div class="col-md-3">
-                    <div class="product-card">
-                        <div class="product-image rapid-bike-bg"></div>
-                        <div class="product-content">
-                            <h3 class="product-title">SOFTWARES</h3>
-                            <div class="product-line"></div>
-                            <p class="product-description">INSTALAÇÃO E CONFIGURAÇÃO DE TECHTOOL, IMPACT, SDP3 E APCI</p>
-                        </div>
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="https://via.placeholder.com/200x100/1e1e35/FFD700?text=Logo" alt="Patrocinador 5">
                     </div>
                 </div>
-                
-                <div class="col-md-3">
-                    <div class="product-card">
-                        <div class="product-image dyno-bg"></div>
-                        <div class="product-content">
-                            <h3 class="product-title">ONLINE</h3>
-                            <div class="product-line"></div>
-                            <p class="product-description">TREINAMENTO REMOTO COM ACOMPANHAMENTO EM TEMPO REAL</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Professional/Enthusiast Section -->
-    <section class="user-type-section">
-        <div class="container-fluid p-0">
-            <div class="row g-0">
-                <div class="col-md-6 user-type-card professional-card">
-                    <div class="user-type-content">
-                        <h2 class="user-type-title">NOVO NA ÁREA?</h2>
-                        <p class="user-type-subtitle">CLIQUE E DESCUBRA</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 user-type-card enthusiast-card">
-                    <div class="user-type-content">
-                        <h2 class="user-type-title">OU PROFISSIONAL?</h2>
-                        <p class="user-type-subtitle">CLIQUE E DESCUBRA</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quote Section -->
-    <section class="quote-section" id="online">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <!-- Left Content -->
-                <div class="col-lg-6">
-                    <div class="online-badge">● PLATAFORMA ON-LINE</div>
-                    <h2 class="online-title">Plataforma de <span style="color: var(--primary-yellow);">Treinamento On-line</span></h2>
-                    <p class="online-description">A nossa plataforma on-line foi criada para quem precisa de evolução técnica com clareza, passo a passo e acesso facilitado, sem depender de turmas presenciais.</p>
-                    
-                    <!-- Two Cards -->
-                    <div class="row g-4 mt-4">
-                        <!-- Card 1 -->
-                        <div class="col-md-6">
-                            <div class="online-card">
-                                <div class="online-card-icon">
-                                    <i class="fas fa-book"></i>
-                                </div>
-                                <h3 class="online-card-title">O que você encontra na plataforma</h3>
-                                <ul class="online-card-list">
-                                    <li><i class="fas fa-check-circle"></i> Aulas organizadas por módulos</li>
-                                    <li><i class="fas fa-check-circle"></i> Conteúdo direto ao ponto e aplicável</li>
-                                    <li><i class="fas fa-check-circle"></i> Atualizações conforme mudanças do mercado</li>
-                                    <li><i class="fas fa-check-circle"></i> Acesso centralizado aos seus treinamentos</li>
-                                    <li><i class="fas fa-check-circle"></i> Materiais de apoio (quando aplicável)</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <!-- Card 2 -->
-                        <div class="col-md-6">
-                            <div class="online-card">
-                                <div class="online-card-icon">
-                                    <i class="fas fa-bullseye"></i>
-                                </div>
-                                <h3 class="online-card-title">Para quem é ideal</h3>
-                                <ul class="online-card-list">
-                                    <li><i class="fas fa-check-circle"></i> Quem quer aprender mesmo com rotina corrida</li>
-                                    <li><i class="fas fa-check-circle"></i> Quem deseja revisar e ganhar confiança técnica</li>
-                                    <li><i class="fas fa-check-circle"></i> Quem quer evoluir e se profissionalizar com método</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- CTA Button -->
-                    <a href="https://api.whatsapp.com/send?phone=556282348787&text=Olá,%20quero%20saber%20mais%20sobre%20os%20cursos%20online" target="_blank" class="btn-online-cta">
-                        <i class="fas fa-laptop"></i>
-                        Quero fazer um treinamento on-line
-                        <i class="fas fa-chevron-right"></i>
-                    </a>
-                </div>
-                
-                <!-- Right Image/Video -->
-                <div class="col-lg-6">
-                    <div class="online-image-wrapper">
-                        <div class="online-rec-badge">● REC</div>
-                        <img src="imagens/EVENTO 7.jpeg" alt="Treinamento Volmaster Tech" class="online-image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Online Courses Section -->
-    <section class="courses-section py-5" id="cursos-online">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="courses-title">Cursos <span style="color: var(--primary-yellow);">Online Disponíveis</span></h2>
-            </div>
-            
-            <div class="row g-4">
-                <!-- Curso 1 -->
-                <div class="col-lg-6">
-                    <a href="https://payfast.greenn.com.br/117394" target="_blank" style="text-decoration: none; color: inherit;">
-                        <div class="course-card">
-                            <div class="course-icon">
-                                <i class="fas fa-play"></i>
-                            </div>
-                            <h3 class="course-title">Programação e edição de arquivos básico</h3>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Curso 2 -->
-                <div class="col-lg-6">
-                    <a href="https://payfast.greenn.com.br/116907" target="_blank" style="text-decoration: none; color: inherit;">
-                        <div class="course-card">
-                            <div class="course-icon">
-                                <i class="fas fa-play"></i>
-                            </div>
-                            <h3 class="course-title">Combo 2 em 1 - Programação + Edição de arquivos (Básico e Avançado)</h3>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Curso 3 -->
-                <div class="col-lg-6">
-                    <a href="https://payfast.greenn.com.br/133467" target="_blank" style="text-decoration: none; color: inherit;">
-                        <div class="course-card">
-                            <div class="course-icon">
-                                <i class="fas fa-play"></i>
-                            </div>
-                            <h3 class="course-title">Caixa I-SHIFT versão C e D</h3>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Curso 4 -->
-                <div class="col-lg-6">
-                    <a href="https://payfast.greenn.com.br/123058" target="_blank" style="text-decoration: none; color: inherit;">
-                        <div class="course-card">
-                            <div class="course-icon">
-                                <i class="fas fa-play"></i>
-                            </div>
-                            <h3 class="course-title">Regulagem de válvula Motor D13K</h3>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Videos Section -->
-    <!-- Treinamentos Disponíveis Section -->
-    <section class="training-section py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <div class="training-badge mb-3">● CAPACITAÇÃO DE ELITE</div>
-                <h2 class="section-title mb-4">Treinamentos <span style="color: var(--primary-yellow);">Disponíveis</span></h2>
-                <p class="training-description">Domine a tecnologia Volvo com nossos cursos especializados. Do clássico ao Euro 6, cobrimos todas as necessidades do mercado.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Videos Section -->
-    <section class="videos-section py-5">
-        <div class="container">
-            <h2 class="section-title mb-5 text-center">Histórias de <span style="color: var(--primary-yellow);">Sucesso</span></h2>
-            
-            <!-- Video Carousel -->
-            <div class="video-carousel" id="videoCarousel">
-                <div class="row g-4 justify-content-center shorts-format">
-                        <!-- Video 1 -->
-                        <div class="col-lg-4 col-md-6 col-sm-12 video-slide">
-                            <div class="video-card">
-                                <div class="video-wrapper">
-                                    <iframe src="https://www.youtube.com/embed/VqY4ct4czOw" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <div class="video-info">
-                                    <h4>Caixa I-Shift</h4>
-                                    <p>TREINAMENTO TÉCNICO</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video 2 -->
-                        <div class="col-lg-4 col-md-6 col-sm-12 video-slide">
-                            <div class="video-card">
-                                <div class="video-wrapper">
-                                    <iframe src="https://www.youtube.com/embed/Z-YmzQdPoxQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <div class="video-info">
-                                    <h4>Dominei a eletrônica Volvo</h4>
-                                    <p>ELETRICISTA AUTOMOTIVO</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video 3 -->
-                        <div class="col-lg-4 col-md-6 col-sm-12 video-slide">
-                            <div class="video-card">
-                                <div class="video-wrapper">
-                                    <iframe src="https://www.youtube.com/embed/7AjRYKbLvoc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <div class="video-info">
-                                    <h4>Elétrica e Eletrônica FH Clássico</h4>
-                                    <p>SISTEMA VOLVO</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video 4 -->
-                        <div class="col-lg-4 col-md-6 col-sm-12 video-slide">
-                            <div class="video-card">
-                                <div class="video-wrapper">
-                                    <iframe src="https://www.youtube.com/embed/abji2jtvu6E" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <div class="video-info">
-                                    <h4>Feedback Treinamento Online</h4>
-                                    <p>DEPOIMENTO ALUNO</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video 5 -->
-                        <div class="col-lg-4 col-md-6 col-sm-12 video-slide">
-                            <div class="video-card">
-                                <div class="video-wrapper">
-                                    <iframe src="https://www.youtube.com/embed/FyemBxsdTcE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <div class="video-info">
-                                    <h4>Experiência de Treinamento</h4>
-                                    <p>HISTÓRIA DE SUCESSO</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video 6 -->
-                        <div class="col-lg-4 col-md-6 col-sm-12 video-slide">
-                            <div class="video-card">
-                                <div class="video-wrapper">
-                                    <iframe src="https://www.youtube.com/embed/6HATLNFG9n4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <div class="video-info">
-                                    <h4>Capacitação Volmaster</h4>
-                                    <p>DEPOIMENTO</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Nossa Estrutura Section -->
-    <section class="structure-section py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Nossa <span style="color: var(--primary-yellow);">Estrutura</span></h2>
-                <p class="structure-description">Pensada para oferecer a melhor experiência prática e teórica do mercado.</p>
-            </div>
-            
-            <div class="row g-4">
-                <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="structure-card">
-                        <div class="structure-icon">
-                            <i class="fas fa-truck"></i>
-                        </div>
-                        <h4>Caminhão para prática</h4>
-                        <p>Treinamento para Prática com aplicação real em Caminhões FH4 Euro 6 e demais modelos,
-                            oermitindo diagnóstico, testes e simulações diretamente do veículo.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="structure-card">
-                        <div class="structure-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <h4>Salas de Treinamento</h4>
-                        <p>Uma sala de treinamento confortável e climatizada para o melhor aprendizado teórico.</p>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="structure-card">
-                        <div class="structure-icon">
-                            <i class="fas fa-wrench"></i>
-                        </div>
-                        <h4>Recursos Didáticos</h4>
-                        <p>Motores, transmissões, módulos eletrônicos e componentes disponíveis para desmontagem, análise técnica e aprendizado prático durante o curso.</p>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="structure-card">
-                        <div class="structure-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h4>Alojamento</h4>
-                        <p>Estrutura completa de alojamento para sua comodidade durante o período do curso.</p>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="structure-card">
-                        <div class="structure-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <h4>Equipamento Disponível</h4>
-                        <p>Ferramentas e Tecnologia Profissional
-                            Scanners, softwares de diagnóstico, equipamentos de medição e 
-                            ferramentas utilizadas no mercado
-                             para formação completa do profissional.</p>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="structure-card">
-                        <div class="structure-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h4>Softwares Profissionais</h4>
-                        <p>Acesso aos principais softwares de diagnóstico Volvo e Scania utilizados no mercado.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About/Info Section -->
-    <section class="info-section py-5">
-        <div class="container">
-            <div class="info-slider">
-                <button class="slider-arrow left"><i class="fas fa-chevron-left"></i></button>
-                <div class="info-content">
-                    <p>Somos especialistas em caminhões <strong>Volvo e Scania</strong>, oferecendo treinamento completo em diagnóstico, reparo e instalação de softwares profissionais. Com mais de 14 anos de experiência, capacitamos mecânicos e profissionais da área automotiva com conhecimento prático e teórico de excelência.</p>
-                    <a href="#" class="btn-saiba-mais">SAIBA MAIS</a>
-                </div>
-                <button class="slider-arrow right"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section py-5" id="faq">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="faq-title">Dúvidas <span style="color: var(--primary-yellow);">Frequentes</span></h2>
-                <p class="faq-subtitle">Respostas para as perguntas mais comuns sobre nossos treinamentos.</p>
-            </div>
-            
-            <div class="faq-container">
-                <!-- Pergunta 1 -->
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Os treinamentos são para iniciantes na linha Volvo?</span>
-                        <i class="fas fa-minus"></i>
-                    </button>
-                    <div class="faq-answer active">
-                        <p>Sim. Temos treinamentos para diferentes níveis. A SUZI te ajuda a escolher o melhor para o seu perfil e necessidade.</p>
-                    </div>
-                </div>
-                
-                <!-- Pergunta 2 -->
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Preciso levar ferramentas?</span>
-                        <i class="fas fa-minus"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Não. Para a maioria dos treinamentos, a estrutura e os recursos necessários para a prática orientada são fornecidos pela própria organização. O seu computador só será necessário em alguns cursos de programação específicos.</p>
-                    </div>
-                </div>
-                
-                <!-- Pergunta 3 -->
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Como funciona o on-line?</span>
-                        <i class="fas fa-minus"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Você acessa pela plataforma e segue os módulos no seu ritmo. O curso conta com certificado e apostila completa para download.</p>
-                    </div>
-                </div>
-                
-                <!-- Pergunta 4 -->
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">
-                        <span>Como entrar na agenda e valores?</span>
-                        <i class="fas fa-minus"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Fale conosco para receber as informações atualizadas sobre dados, disponibilidade e investimento.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- CTA Button -->
-            <div class="text-center mt-5">
-                <a href="https://api.whatsapp.com/send?phone=556293290519&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos" target="_blank" class="btn-whatsapp-cta">
-                    <i class="fab fa-whatsapp"></i>
-                    Fale Conosco no WhatsApp
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location Section -->
-    <section class="location-section py-5" id="localizacao">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-5">
-                    <h2 class="location-title mb-4">Onde Estamos</h2>
-                    <p class="location-address mb-3">
-                        Rua das Magnólias, Qd 113, Lt 07, 08,<br>
-                        Parque Oeste Industrial, Goiânia - GO<br>
-                        CEP: 74375-100
-                    </p>
-                    <a href="https://maps.google.com/?q=Rua+das+Magnólias,+Qd+113,+Lt+07,+08,+Parque+Oeste+Industrial,+Goiânia+-+GO" target="_blank" class="btn-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        Goiânia - GO
-                    </a>
-                </div>
-                <div class="col-lg-7">
-                    <div class="map-wrapper">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.8444073845837!2d-49.3266!3d-16.7033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef0e06e5a3e95%3A0x6e3e6e6e6e6e6e6e!2sParque%20Oeste%20Industrial%2C%20Goi%C3%A2nia%20-%20GO!5e0!3m2!1spt-BR!2sbr!4v1623456789123!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">
+                        <img src="https://via.placeholder.com/200x100/1e1e35/FFD700?text=Logo" alt="Patrocinador 6">
                     </div>
                 </div>
             </div>
@@ -596,138 +458,58 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer-section">
+    <footer class="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-md-3">
+            <div class="footer-content">
+                <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="imagens/logo volmaster branco.jpg" alt="VOLMASTER TECH" style="max-width: 150px; margin-bottom: 20px;">
+                        <!-- <img src="images/logo.png" alt="Volmaster Tech" class="logo-img"> -->
+                        <div>
+                            <h3>VOLMASTER</h3>
+                            <p>DAY</p>
+                        </div>
                     </div>
-                    <div class="footer-company-info">
-                        <p>O maior centro de treinamento da linha pesada do Brasil. Formando profissionais de sucesso há mais de 14 anos.</p>
+                    <p>Criando experiências memoráveis através de eventos de tecnologia e inovação.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                
-                <div class="col-md-3">
-                    <h4 class="footer-title">Navegação</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">Não se trata de uma questão de...</a></li>
-                        <li><a href="#cursos">Treinamentos</a></li>
-                        <li><a href="#estrutura">Estrutura</a></li>
-                        <li><a href="#online">Plataforma Online</a></li>
-                        <li><a href="#">Perguntas frequentes</a></li>
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#about">Sobre Nós</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#schedule">Programação</a></li>
+                        <li><a href="#sponsors">Patrocinadores</a></li>
+                        <li><a href="#contact">Contato</a></li>
                     </ul>
                 </div>
-                
-                <div class="col-md-3">
-                    <h4 class="footer-title">Redes Sociais</h4>
-                    <p class="footer-text mb-3">Siga nosso Instagram e inscreva-se no canal.</p>
-                    <div class="footer-social">
-                        <a href="https://www.instagram.com/volmastertech/" target="_blank" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@volmastertechtreinamentote8457" target="_blank" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="col-md-3">
+                <div class="footer-col">
+                    <h4>Informações de Contato</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Centro de Convenções São Paulo</li>
+                        <li><i class="fas fa-phone"></i> +55 11 99999-9999</li>
+                        <li><i class="fas fa-envelope"></i> eventos@volmastertech.com</li>
+                    </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <div class="footer-legal mt-4">
-                    <p>© 2026 Volmaster Tech. Todos os direitos reservados.</p>
-                    <div class="legal-links">
-                        <a href="#">Individual de Uso</a>
-                        <span>|</span>
-                        <a href="#">Política de Privacidade</a>
-                    </div>
-                </div>
+                <p>&copy; 2026 Volmaster Tech. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Modal Novo na Área -->
-    <div class="user-modal" id="modalNovo">
-        <div class="user-modal-overlay"></div>
-        <div class="user-modal-content">
-            <button class="user-modal-close" onclick="closeUserModal('modalNovo')">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="user-modal-header">
-                <i class="fas fa-graduation-cap"></i>
-                <h2>Novo na Área?</h2>
-            </div>
-            <div class="user-modal-body">
-                <p>Bem-vindo ao mundo da tecnologia <strong>Volvo</strong>, onde a paixão por caminhões atende as mais avançadas inovações do mercado. Oferecemos soluções completas de treinamento que atendem às mais diversas necessidades:</p>
-                
-                <ul class="modal-list">
-                    <li><i class="fas fa-check-circle"></i> Diagnóstico eletrônico avançado de sistemas Volvo</li>
-                    <li><i class="fas fa-check-circle"></i> Manutenção e reparo de motores D11, D13...</li>
-                    <li><i class="fas fa-check-circle"></i> Programação e configuração de ECUs</li>
-                    <li><i class="fas fa-check-circle"></i> Sistemas de transmissão automatizada I-Shift</li>
-                </ul>
-                
-                <p>Do básico até o mais avançado, passamos por todos os sistemas essenciais para você dominar a tecnologia Volvo e se destacar no mercado profissional.</p>
-                
-                <a href="https://api.whatsapp.com/send?phone=556293290519&text=Ol%C3%A1!%20Sou%20novo%20na%20%C3%A1rea%20e%20quero%20saber%20mais%20sobre%20os%20treinamentos%20Volvo" target="_blank" class="btn-modal-cta">
-                    <i class="fab fa-whatsapp"></i>
-                    Quero Começar Agora
-                </a>
-            </div>
-        </div>
+    <!-- Chat Button -->
+    <div class="chat-button">
+        <button class="chat-btn">
+            <span class="chat-text">Olá! Em que posso ajudar?</span>
+            <i class="fas fa-comments chat-icon"></i>
+        </button>
     </div>
 
-    <!-- Modal Profissional -->
-    <div class="user-modal" id="modalProfissional">
-        <div class="user-modal-overlay"></div>
-        <div class="user-modal-content">
-            <button class="user-modal-close" onclick="closeUserModal('modalProfissional')">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="user-modal-header">
-                <i class="fas fa-tools"></i>
-                <h2>Você é Profissional?</h2>
-            </div>
-            <div class="user-modal-body">
-                <p>Seja qual for o seu negócio no campo de manutenção e diagnóstico de caminhões <strong>Volvo</strong>, estamos aqui como sua aliada confiável no trabalho diário.</p>
-                
-                <p>Um único parceiro capaz de oferecer a mais ampla gama de conhecimentos técnicos para otimização, diagnóstico avançado e programação de sistemas Volvo.</p>
-                
-                <div class="modal-highlight">
-                    <i class="fas fa-rocket"></i>
-                    <p><strong>Precisa de capacitação técnica de alto nível?</strong> Nossa equipe especializada está à sua inteira disposição para elevar seus conhecimentos ao próximo nível!</p>
-                </div>
-                
-                <div class="modal-highlight">
-                    <i class="fas fa-chart-line"></i>
-                    <p><strong>Quer expandir seu negócio e atender clientes mais exigentes?</strong> Deixa conosco que o papel de capacitar é com a gente mesmo! Temos sempre a solução mais adequada para você!</p>
-                </div>
-                
-                <a href="https://api.whatsapp.com/send?phone=556293290519&text=Ol%C3%A1!%20Sou%20profissional%20e%20quero%20me%20especializar%20em%20Volvo" target="_blank" class="btn-modal-cta">
-                    <i class="fab fa-whatsapp"></i>
-                    Quero Me Especializar
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scrollTop">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-
-    <!-- Botão Flutuante Fale Conosco -->
-    <a href="https://api.whatsapp.com/send?phone=556293290519&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20treinamentos" target="_blank" class="btn-float-contact">
-        <i class="fas fa-comments"></i>
-        <span>FALE CONOSCO</span>
-    </a>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JS -->
     <script src="js/script.js"></script>
 </body>
 </html>
