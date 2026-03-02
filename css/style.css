@@ -2735,8 +2735,9 @@ a {
         padding: 60px 0;
     }
     
-    .video-wrapper {
-        padding-bottom: 56.25%;
+    .shorts-format .video-wrapper {
+        padding-bottom: 177.78%;
+        max-width: 100%;
     }
     
     .section-title {
@@ -3213,8 +3214,9 @@ a {
     }
     
     /* Vídeos Mobile */
-    .video-wrapper {
-        padding-bottom: 56.25%;
+    .shorts-format .video-wrapper {
+        padding-bottom: 177.78%;
+        max-width: 100%;
     }
     
     .video-info h4 {
