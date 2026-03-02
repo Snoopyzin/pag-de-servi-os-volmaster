@@ -801,6 +801,7 @@ a {
     text-align: center;
     letter-spacing: -1px;
     margin: 0 auto;
+    margin-top: 100px;
     padding: 0 15px;
     text-shadow: 
         0 0 30px rgba(253, 185, 21, 0.5),
@@ -899,7 +900,7 @@ a {
     padding: 18px 40px;
     font-size: clamp(11px, 2.6vw, 13px);
     font-weight: 700;
-    margin: 25px auto 0 auto;
+    margin: 220px auto 0 auto;
     cursor: pointer;
     transition: all 0.3s;
     text-transform: uppercase;
@@ -942,6 +943,20 @@ a {
 
 .btn-discover:hover {
     background-color: #ffca3a;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(253, 185, 21, 0.5);
+}
+
+.btn-discover-secondary {
+    margin-top: 20px;
+    background-color: transparent;
+    border: 2px solid var(--primary-yellow);
+    color: var(--primary-yellow);
+}
+
+.btn-discover-secondary:hover {
+    background-color: var(--primary-yellow);
+    color: #000000;
     transform: translateY(-3px);
     box-shadow: 0 12px 35px rgba(253, 185, 21, 0.5);
 }
@@ -1245,30 +1260,40 @@ a {
 
 .product-content {
     position: absolute;
-    bottom: 50px;
-    left: 40px;
-    right: 40px;
+    bottom: 25px;
+    left: 20px;
+    right: 20px;
     color: var(--white);
+    max-height: 60%;
+    overflow: hidden;
 }
 
 .product-title {
-    font-size: 48px;
+    font-size: clamp(22px, 3vw, 38px);
     font-weight: 900;
     font-style: italic;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+    line-height: 1.1;
+    word-break: break-word;
 }
 
 .product-line {
     width: 80px;
     height: 4px;
     background-color: var(--primary-yellow);
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 .product-description {
-    font-size: 14px;
-    line-height: 1.8;
-    font-weight: 400;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(10px, 1vw, 12px);
+    line-height: 1.5;
+    font-weight: 600;
+    text-align: left;
+    word-break: break-word;
+    hyphens: auto;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
 }
 
 /* ===================================
